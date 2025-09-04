@@ -2,25 +2,49 @@ package shapes;
 
 public class Square {
 
-	private float sidelength;
-	private float area;
+	private double sidelength;
 	
 	public Square() {
 		
-		sidelength = 1.0f;
-		area = 1.0f;
+		this.sidelength = 1.0;
 		
 	}
 	
-	public Square(float sideLength) {
-		sideLength = sideLength;
-		area = sideLength * sideLength;
+
+	
+	public Square(double sidelength) {
+		if(sidelength <= 0) {
+			throw new IllegalArgumentException("Sidelength must be a positive number");
+		} 
+		else {
+			this.sidelength = sidelength;
+		}
 		
+	}
+
+	public double getSidelength() {
+		return sidelength;
+	}
+
+	public void setSidelength(double sidelength) {
+		
+		if(sidelength <= 0) {
+			throw new IllegalArgumentException("Sidelength must be positive number");
+		}
+		else {
+			this.sidelength = sidelength;
+		}
+		
+	}
+
+	public double getArea() {
+		return this.sidelength * this.sidelength;
 	}
 	
-	public float getArea() {
-		
-		return area;
-	}
+	 @Override
+	    public String toString() {
+	        return "Side Length = " + this.sidelength;
+	    }
+	
 
 }
