@@ -41,7 +41,7 @@ public class Square {
 		return this.sidelength * this.sidelength;
 	}
 	
-	 @Override
+	
 	    public String toString() {
 	        return "Side Length = " + this.sidelength;
 	    }
